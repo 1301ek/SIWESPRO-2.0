@@ -12,17 +12,25 @@
       height: 360px;
       width: 100%;
       object-fit: cover;
+      margin-bottom: 16px;
     }
   </style>
 </head>
 <body>
+  {% include 'nav.html' %}
+  <img class="img-fluid" id="banner" src="/static/task.jpg">
   <div class="container">
     <h1 class="text-center mt-4 mb-4">UNIUYO Entreprenureship Training</h1>
-    <img class="img-fluid" id="banner" src="/static/task.jpg">
-    <h2 class="text-center mt-3 mb-3">About UNIUYO Entreprenureship</h2>
+    <div class="row" style="margin-bottom: 16px; margin: 0 auto">
+      <div class="col-md-6">
     <p class="lead">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit aliquet nisi, sit amet bibendum nunc. Sed pharetra justo non accumsan bibendum. Nunc id fringilla nunc. Etiam cursus ornare ligula sit amet tincidunt. Vestibulum non fringilla sapien, sit amet suscipit lorem. Curabitur tempor ligula fermentum erat imperdiet, at feugiat lacus sollicitudin. Vestibulum nibh metus, aliquam at dignissim eget, bibendum eget metus. Nam malesuada nunc ac arcu volutpat, ac commodo augue feugiat. Quisque efficitur, purus at posuere pharetra, arcu massa tincidunt purus, vitae imperdiet leo libero ac quam. Proin congue libero sem, vel semper tellus ultrices vel. Aliquam erat volutpat.
     </p>
+      </div>
+      <div class = "d-none d-md-block col-md-6">
+      <img src="/static/work.jpg" style="height: 300px; border-radius: 4px;">
+      </div>
+    </div>
     <h2 class="text-center mt-2 mb-4">Course Openings</h2>
     <div>
       {% for job in jobs %}
@@ -30,9 +38,9 @@
       {% endfor %}
     </div>
     <div class="text-center">
-      <button type="button" class="btn btn-primary btn-lg">Contact Us</button>
-      <p class="mt-2">Copyright 2024, UNIUYO</p>
+      <a href="mailto:praisxz@gmail.com?subject=Question(s)%20about%20job%20openings&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20question%3A%20%3Cquestion%20here%3E" type="button" class="btn btn-primary btn-lg">Contact Us</a>
     </div>
   </div>
+  {% include 'footer.html' %}
 </body>
 </html>
