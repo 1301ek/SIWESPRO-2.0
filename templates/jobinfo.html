@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Title - UniJobs</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/fvc.png') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            background-color: #f0f0f0;
+        }
+
+        .job-image {
+            flex: 1;
+            background-image: url('/api/placeholder/400/400');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        #jmage {
+            max-width: 700px;
+        }
+
+        .job-details {
+            flex: 2;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            background-color: #704214;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    {% if job.title == 'Penetration Tester' %}
+    <div class="job-image"><img src="/static/images/cyber.jpg" id="jmage"></div>
+    {% endif %}
+    <div class="job-details">
+        <h1>{{job.title}}</h1>
+        <p class="lead mt-0">{{job.location}}</p>
+        <h4>Responsibilities</h4>
+        <ul>
+            {% for line in job.responsibilities.split("\n") %}
+            <li>{{line}}</li>
+            {% endfor %}
+        </ul>
+        <h4>Requirements</h4>
+        <ol>
+            {% for line in job.requirements.split("\n") %}
+            <li>{{line}}</li>
+            {% endfor %}
+        </ol>
+        {% if 'salary' in job %}
+        <h4>Salary</h4>
+        <p>{{job.currency}} {{job.salary}}</p>
+        {% endif %}
+        <a href="/job/{{job['id']}}/apply" class="apply-btn">Apply</a>
+    </div>
+</body>
+
+</html>

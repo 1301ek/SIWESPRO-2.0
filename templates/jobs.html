@@ -1,0 +1,18 @@
+<div class="positions-container">
+    <div class="position-card">
+        <div class="position-image">{{job['image_data']}}</div>
+        <div class="position-content">
+            <h2>{{job['title']}}</h2>
+            <div>
+                <b>Location:</b> {{job['location']}}
+            </div>
+            {% if 'salary' in job %}
+            <div>
+                <b>Salary:</b> {{job['currency']}} {{job['salary']}}
+            </div>
+            {% endif %}
+
+            <a href="#" class="see-more-btn">See More</a>
+        </div>
+    </div>
+</div>

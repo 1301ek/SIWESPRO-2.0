@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url('{{ url_for('static', filename='/static/fonts/OpenSans.ttf') }}') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'OpenSans', sans-serif;
+    background-color: #f8f8f8;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+}
+
+.logo {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.logo-img {
+    width: 60px;
+}
+
+.content {
+    flex: 1;
+    max-width: 50%;
+    padding-left: 50px;
+
+    /* Flexbox to center content */
+    display: flex;
+    flex-direction: column;
+    /* Align items vertically */
+    justify-content: center;
+    /* Vertically center content */
+    align-items: center;
+    /* Horizontally center content */
+    text-align: center;
+    /* Center text inside */
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 4rem;
+    color: #000;
+}
+
+pre {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #6c63ff;
+    margin-bottom: 20px;
+}
+
+
+.listings-btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px 40px;
+    background: linear-gradient(90deg, #000, #daa520);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 1.2rem;
+}
+
+.social-icons {
+    display: flex;
+    margin-top: 20px;
+    gap: 25px;
+}
+
+.social-icons img {
+    width: 45px;
+    height: 45px;
+}
+
+.image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-img {
+    width: auto;
+    height: 100vh;
+    object-fit: cover;
+}

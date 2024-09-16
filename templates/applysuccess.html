@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Submitted - UniJobs</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/fvc.png') }}">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            background-color: #E6F3FF;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+        }
+        .sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background-color: #ADE8FF;
+            z-index: -1;
+        }
+        .ground {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background-color: #7AC943;
+            z-index: -1;
+        }
+        .cloud {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+        }
+        .cloud-1 {
+            width: 100px;
+            height: 50px;
+            top: 20%;
+            left: 20%;
+        }
+        .cloud-2 {
+            width: 150px;
+            height: 75px;
+            top: 10%;
+            right: 15%;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="sky"></div>
+    <div class="ground"></div>
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="container">
+        <h2>Your application for the<br>office of a <b>{{job['title']}}</b> at Fury Road University has been<br>submitted successfully!</h2>
+        
+        <p>We'll reach out to you soon.</p>
+    </div>
+</body>
+</html>

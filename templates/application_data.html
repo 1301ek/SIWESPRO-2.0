@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form - UniJobs</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/fvc.png') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background-color: #704214;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #5a3510;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{job['title']}}</h1>
+        <form action="/job/{{job['id']}}/apply/submit" method="post">
+            <div class="form-group">
+                <label>Full Name</label><br>
+                <input type="text" name="full_name" placeholder="Jeffrey Dahmer" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label><br>
+                <input type="text" name="email" placeholder="jboydahmer@example.com" required>
+            </div>
+            <div class="form-group">
+                <label>LinkedIn URL</label><br>
+                <input type="text" name="linkedin_url" placeholder="https://linkedin.com/in/jeffreydahmer" required>
+            </div>
+            <div class="form-group">
+                <label>Resume URL</label><br>
+                <input type="text" name="resume_url" required>
+            </div>
+            <div class="form-group">
+                <label>Education</label><br>
+                <textarea type="text" name="education" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Work Experience</label><br>
+                <textarea type="text" name="work_experience" required></textarea>
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>
