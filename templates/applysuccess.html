@@ -56,13 +56,27 @@
             top: 10%;
             right: 15%;
         }
-        h1 {
+        h2 {
             font-size: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 10px;
+            margin-top: 1rem;
+            line-height: 1.5;
+            font-weight: normal;
         }
+        
         p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
+        }
+
+        .home-btn {
+            display: inline-block;
+            background-color: #704214;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -75,6 +89,7 @@
         <h2>Your application for the<br>office of a <b>{{job['title']}}</b> at Fury Road University has been<br>submitted successfully!</h2>
         
         <p>We'll reach out to you soon.</p>
+        <a href="/" type="button" class="home-btn">Back Home</a>
     </div>
 </body>
 </html>

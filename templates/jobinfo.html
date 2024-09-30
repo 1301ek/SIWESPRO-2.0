@@ -8,16 +8,15 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/fvc.png') }}">
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
             display: flex;
-            background-color: #f0f0f0;
+            font-family: 'OpenSans', sans-serif;
+            background-color: #e1d4d4;
         }
 
         .job-image {
             flex: 1;
-            background-image: url('/api/placeholder/400/400');
             background-size: cover;
             background-position: center;
             border-radius: 10px;
@@ -25,7 +24,9 @@
         }
 
         #jmage {
-            max-width: 700px;
+            max-width: 475px;
+            max-height: 700px;
+            border-radius: 10px;
         }
 
         .job-details {
@@ -52,9 +53,7 @@
 </head>
 
 <body>
-    {% if job.title == 'Penetration Tester' %}
-    <div class="job-image"><img src="/static/images/cyber.jpg" id="jmage"></div>
-    {% endif %}
+    {% include 'jobimages.html' %}
     <div class="job-details">
         <h1>{{job.title}}</h1>
         <p class="lead mt-0">{{job.location}}</p>

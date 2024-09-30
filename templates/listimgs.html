@@ -1,0 +1,24 @@
+<style>
+    #jmage {
+        max-height: 160px;
+        min-width: 400px;
+    }
+</style>
+{% if job.title == 'Penetration Tester' %}
+    <div class="job-image"><img src="/static/images/jobpegs/cyber.png" id="jmage"></div>
+    {% endif %}
+    {% if job.title == 'Frontend Engineer' %}
+    <div class="job-image"><img src="/static/images/jobpegs/fend.png" id="jmage"></div>
+    {% endif %}
+    {% if job.title == 'Ecologist' %}
+    <div class="job-image"><img src="/static/images/jobpegs/eco.png" id="jmage"></div>
+    {% endif %}
+    {% if job.title == 'Physicist' %}
+    <div class="job-image"><img src="/static/images/jobpegs/physics.png" id="jmage"></div>
+    {% endif %}
+    {% if job.title == 'Microbiologist' %}
+    <div class="job-image"><img src="/static/images/jobpegs/mcb.png" id="jmage"></div>
+    {% endif %}
+    {% if job.title == 'Data Scientist' %}
+    <div class="job-image"><img src="/static/images/jobpegs/data.png" id="jmage"></div>
+    {% endif %}
